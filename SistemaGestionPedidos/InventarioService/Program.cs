@@ -19,6 +19,22 @@ builder.Services.AddDbContext<InventarioDbContext>(options =>
 builder.Services.AddScoped<IProductoRepository, ProductoRepository>();
 builder.Services.AddScoped<ProductoService>();
 
+// Servicios Swagger
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+builder.Services.AddControllers();
+
+// Habilitar Swagger solo en desarrollo o siempre si es necesario
+if (app.Environment.IsDevelopment() || app.Environment.IsProduction())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "API de Pedidos v1");
+        c.RoutePrefix = string.Empty; // Muestra la UI en la raíz (http://localhost:xxxx/)
+    });
+}
+
 builder.Services.AddControllers();
 
 var app = builder.Build();
