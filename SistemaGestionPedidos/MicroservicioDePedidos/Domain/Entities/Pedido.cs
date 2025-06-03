@@ -1,17 +1,17 @@
-namespace MicroservicioDePedidos.Domain.Entities;
-
-public enum EstadoPedido
-{
-    PENDIENTE,
-    EN_PREPARACION,
-    LISTO,
-    ENTREGADO
-}
-
 public class Pedido
 {
-    public long Id { get; set; }
-    public string Descripcion { get; set; }
-    public DateTime FechaCreacion { get; set; } = DateTime.UtcNow;
-    public EstadoPedido Estado { get; set; } = EstadoPedido.PENDIENTE;
+    public Guid Id { get; private set; }
+    public Guid ClienteId { get; private set; }
+    public DateTime Fecha { get; private set; }
+    public List<ItemPedido> Items { get; private set; }
+    public decimal Total { get; private set; }
+
+    public Pedido(Guid clienteId, List<ItemPedido> items)
+    {
+        Id = Guid.NewGuid();
+        ClienteId = clienteId;
+        Fecha = DateTime.UtcNow;
+        Items = items;
+        Total = items.Sum(i => i.Subtotal);
+    }
 }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "aKHzyTD/j4s=",
+  "dgSpecHash": "RZpqXUVpViQ=",
   "success": true,
-  "projectFilePath": "C:\\Users\\asus\\Desarrollo\\SistemaGestionPedidos\\SistemaGestionPedidos.csproj",
+  "projectFilePath": "C:\\Users\\asus\\Downloads\\Proyecto - Construcción de Software\\SistemaGestionPedidos_Completo_Final_ConSwaggerJson_ConIntegracion\\SistemaGestionPedidos.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\asus\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\asus\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.3\\microsoft.aspnetcore.openapi.9.0.3.nupkg.sha512",

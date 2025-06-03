@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\asus\\Desarrollo\\SistemaGestionPedidos\\SistemaGestionPedidos.csproj": {}
+    "C:\\Users\\asus\\Downloads\\Proyecto - Construcción de Software\\SistemaGestionPedidos_Completo_Final_ConSwaggerJson_ConIntegracion\\SistemaGestionPedidos.csproj": {}
   },
   "projects": {
-    "C:\\Users\\asus\\Desarrollo\\SistemaGestionPedidos\\SistemaGestionPedidos.csproj": {
+    "C:\\Users\\asus\\Downloads\\Proyecto - Construcción de Software\\SistemaGestionPedidos_Completo_Final_ConSwaggerJson_ConIntegracion\\SistemaGestionPedidos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\asus\\Desarrollo\\SistemaGestionPedidos\\SistemaGestionPedidos.csproj",
+        "projectUniqueName": "C:\\Users\\asus\\Downloads\\Proyecto - Construcción de Software\\SistemaGestionPedidos_Completo_Final_ConSwaggerJson_ConIntegracion\\SistemaGestionPedidos.csproj",
         "projectName": "SistemaGestionPedidos",
-        "projectPath": "C:\\Users\\asus\\Desarrollo\\SistemaGestionPedidos\\SistemaGestionPedidos.csproj",
+        "projectPath": "C:\\Users\\asus\\Downloads\\Proyecto - Construcción de Software\\SistemaGestionPedidos_Completo_Final_ConSwaggerJson_ConIntegracion\\SistemaGestionPedidos.csproj",
         "packagesPath": "C:\\Users\\asus\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\asus\\Desarrollo\\SistemaGestionPedidos\\obj\\",
+        "outputPath": "C:\\Users\\asus\\Downloads\\Proyecto - Construcción de Software\\SistemaGestionPedidos_Completo_Final_ConSwaggerJson_ConIntegracion\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

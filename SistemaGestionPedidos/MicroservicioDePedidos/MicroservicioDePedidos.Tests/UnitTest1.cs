@@ -1,10 +1,17 @@
 ﻿namespace MicroservicioDePedidos.Tests;
+using Xunit;
+using System.Threading.Tasks;
 
-public class UnitTest1
+
+namespace UnitTests
 {
-    [Fact]
-    public void Test1()
+    public class UnitTest1
     {
-
+        [Fact]
+        public async Task Test1()
+        {
+            await Task.Delay(10);
+            Assert.True(true);
+        }
     }
 }

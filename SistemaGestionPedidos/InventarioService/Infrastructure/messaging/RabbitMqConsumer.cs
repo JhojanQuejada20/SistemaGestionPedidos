@@ -45,10 +45,12 @@ namespace InventarioService.Infrastructure.Messaging
                                  autoAck: true,
                                  consumer: consumer);
         }
+
         private class PedidoCreadoEvent
         {
             public long ProductoId { get; set; }
             public int Cantidad { get; set; }
         }
     }
+
 }

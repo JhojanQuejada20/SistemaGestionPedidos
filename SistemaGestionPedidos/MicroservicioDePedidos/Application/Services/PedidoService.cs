@@ -1,34 +1,24 @@
-using MicroservicioDePedidos.Domain.Entities;
-using MicroservicioDePedidos.Domain.Repositories;
-
-namespace MicroservicioDePedidos.Application.Services;
-
 public class PedidoService
 {
-    private readonly IPedidoRepository _pedidoRepository;
+    private readonly IPedidoRepository _repository;
+    private readonly IMessagePublisher _publisher;
 
-    public PedidoService(IPedidoRepository pedidoRepository)
+    public PedidoService(IPedidoRepository repository, IMessagePublisher publisher)
     {
-        _pedidoRepository = pedidoRepository;
+        _repository = repository;
+        _publisher = publisher;
     }
 
-    public async Task<Pedido> CrearPedidoAsync(string descripcion)
+    public async Task<Guid> CrearPedidoAsync(CrearPedidoCommand command)
     {
-        var pedido = new Pedido { Descripcion = descripcion };
-        return await _pedidoRepository.CrearPedidoAsync(pedido);
-    }
+        var items = command.Items.Select(i => new ItemPedido(i.ProductoId, i.Cantidad, i.Precio)).ToList();
+        var pedido = new Pedido(command.ClienteId, items);
 
-    public async Task<List<Pedido>> ObtenerTodosAsync()
-    {
-        return await _pedidoRepository.ObtenerTodosAsync();
-    }
+        await _repository.AddAsync(pedido);
 
-    public async Task<Pedido> ActualizarEstadoAsync(long id, EstadoPedido estado)
-    {
-        var pedido = await _pedidoRepository.ObtenerPorIdAsync(id);
-        if (pedido == null) throw new Exception("Pedido no encontrado");
-        
-        pedido.Estado = estado;
-        return await _pedidoRepository.ActualizarPedidoAsync(pedido);
+        var evento = new PedidoCreadoEvent(pedido.Id, pedido.Items);
+        await _publisher.PublicarAsync(evento);
+
+        return pedido.Id;
     }
 }

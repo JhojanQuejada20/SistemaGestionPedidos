@@ -1,0 +1,30 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Sistema Gestion Pedidos - API",
+    "description": "Documentacion Swagger para los microservicios de Pedidos e Inventario.",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/api/pedidos": {
+      "post": {
+        "summary": "Crear un nuevo pedido",
+        "responses": {
+          "201": {
+            "description": "Pedido creado exitosamente"
+          }
+        }
+      }
+    },
+    "/api/productos": {
+      "get": {
+        "summary": "Obtener todos los productos del inventario",
+        "responses": {
+          "200": {
+            "description": "Lista de productos"
+          }
+        }
+      }
+    }
+  }
+}

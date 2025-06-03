@@ -1,0 +1,46 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "API Inventario",
+    "version": "1.0.0",
+    "description": "Documentacion de la API del Microservicio de Inventario"
+  },
+  "paths": {
+    "/api/productos": {
+      "get": {
+        "summary": "Obtener todos los productos",
+        "responses": {
+          "200": {
+            "description": "Lista de productos"
+          }
+        }
+      },
+      "post": {
+        "summary": "Crear un nuevo producto",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "nombre": {
+                    "type": "string"
+                  },
+                  "cantidad": {
+                    "type": "integer"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Producto creado"
+          }
+        }
+      }
+    }
+  }
+}
